@@ -1,0 +1,44 @@
+* source PROIECT_CAD
+.EXTERNAL OUTPUT out
+.EXTERNAL OUTPUT out1
+.EXTERNAL OUTPUT ref
+R_R1         N00083 +VCC  100k TC=0,0 
+R_R3         0 N00083  {senzor} TC=0,0 
+R_R2         0 N00083  100k TC=0,0 
+V_V1         +VCC 0 +12V
+V_V2         -VCC 0 -12V
+R_R6         OUT N11463  1k TC=0,0 
+R_R4         REF N11289  1k TC=0,0 
+X_U4         N11463 N11289 +VCC -VCC OUT1 LM741
+R_R5         N11289 OUT1  11.5k TC=0,0 
+R_R7         0 N11463  11.5k TC=0,0 
+R_Ra         N11846 +VCC  5.6k TC=0,0 
+R_Rb         0 N11846  1k TC=0,0 
+X_U7         N00083 OUT +VCC -VCC OUT LM741
+X_U8         N11846 REF +VCC -VCC REF LM741
+X_U9         OUT1 N13042 +VCC 0 N13228 LM741
+R_R9         0 N13042  1.2k TC=0,0 
+R_R8         N13042 +VCC  4.7k TC=0,0 
+R_R_blue         N13228 N13284  400 TC=0,0 
+D_D1          N13284 0 albastru 
+R_R10         N13754 +VCC  37.4k TC=0,0 
+R_R11         0 N13754  10k TC=0,0 
+X_U10         OUT1 N13754 +VCC 0 N13710 LM741
+D_D2          N13714 0 verde 
+R_R_green         N13710 N13714  400 TC=0,0 
+X_U11         OUT1 N14125 +VCC 0 N14081 LM741
+R_R_red         N14081 N14085  500 TC=0,0 
+R_R13         0 N14125  10k TC=0,0 
+D_D3          N14085 0 rosu 
+R_R12         N14125 +VCC  10.5k TC=0,0 
+D_D4          N14462 0 galben 
+X_U12         OUT1 N14502 +VCC 0 N14458 LM741
+R_R_yellow         N14458 N14462  480 TC=0,0 
+R_R15         0 N14502  3.9k TC=0,0 
+R_R14         N14502 +VCC  2k TC=0,0 
+R_R_orange         N14841 N14845  300 TC=0,0 
+D_D5          N14845 0 portocaliu 
+R_R17         0 N14885  42.2k TC=0,0 
+X_U13         OUT1 N14885 +VCC 0 N14841 LM741
+R_R16         N14885 +VCC  10.5k TC=0,0 
+.PARAM  senzor=25k

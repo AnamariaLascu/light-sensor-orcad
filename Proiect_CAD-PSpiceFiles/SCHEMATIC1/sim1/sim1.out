@@ -1,0 +1,319 @@
+
+**** 05/15/22 00:04:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\schematic1\sim1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../proiect_cad-pspicefiles/verde.lib" 
+.LIB "../../../proiect_cad-pspicefiles/rosu.lib" 
+.LIB "../../../proiect_cad-pspicefiles/portocaliu.lib" 
+.LIB "../../../proiect_cad-pspicefiles/galben.lib" 
+.LIB "../../../proiect_cad-pspicefiles/albastru.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Ana\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "C:\Cadence\LascuAnamaria_orCAD\proiect1-PSpiceFiles\blue.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM senzor 25k 40k 1k 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PROIECT_CAD
+.EXTERNAL OUTPUT out
+.EXTERNAL OUTPUT out1
+.EXTERNAL OUTPUT ref
+R_R1         N00083 +VCC  100k TC=0,0 
+R_R3         0 N00083  {senzor} TC=0,0 
+R_R2         0 N00083  100k TC=0,0 
+V_V1         +VCC 0 +12V
+V_V2         -VCC 0 -12V
+R_R6         OUT N11463  1k TC=0,0 
+R_R4         REF N11289  1k TC=0,0 
+X_U4         N11463 N11289 +VCC -VCC OUT1 LM741
+R_R5         N11289 OUT1  11.5k TC=0,0 
+R_R7         0 N11463  11.5k TC=0,0 
+R_Ra         N11846 +VCC  5.6k TC=0,0 
+R_Rb         0 N11846  1k TC=0,0 
+X_U7         N00083 OUT +VCC -VCC OUT LM741
+X_U8         N11846 REF +VCC -VCC REF LM741
+X_U9         OUT1 N13042 +VCC 0 N13228 LM741
+R_R9         0 N13042  1.2k TC=0,0 
+R_R8         N13042 +VCC  4.7k TC=0,0 
+R_R_blue         N13228 N13284  400 TC=0,0 
+D_D1          N13284 0 albastru 
+R_R10         N13754 +VCC  37.4k TC=0,0 
+R_R11         0 N13754  10k TC=0,0 
+X_U10         OUT1 N13754 +VCC 0 N13710 LM741
+D_D2          N13714 0 verde 
+R_R_green         N13710 N13714  400 TC=0,0 
+X_U11         OUT1 N14125 +VCC 0 N14081 LM741
+R_R_red         N14081 N14085  500 TC=0,0 
+R_R13         0 N14125  10k TC=0,0 
+D_D3          N14085 0 rosu 
+R_R12         N14125 +VCC  10.5k TC=0,0 
+D_D4          N14462 0 galben 
+X_U12         OUT1 N14502 +VCC 0 N14458 LM741
+R_R_yellow         N14458 N14462  480 TC=0,0 
+R_R15         0 N14502  3.9k TC=0,0 
+R_R14         N14502 +VCC  2k TC=0,0 
+R_R_orange         N14841 N14845  300 TC=0,0 
+D_D5          N14845 0 portocaliu 
+R_R17         0 N14885  42.2k TC=0,0 
+X_U13         OUT1 N14885 +VCC 0 N14841 LM741
+R_R16         N14885 +VCC  10.5k TC=0,0 
+.PARAM  senzor=25k
+
+**** RESUMING sim1.cir ****
+.END
+
+**** 05/15/22 00:04:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\schematic1\sim1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               verde           rosu            portocaliu      galben          
+          IS    7.795400E-15   10.000000E-21   10.010000E-21   10.000000E-21 
+           N    3.6796          1.547           4.995           1.738        
+          RS    8.9643          1.000000E-06   99.9             4.8824       
+
+
+               albastru        X_U4.x_lm741.dx X_U4.x_lm741.dy X_U7.x_lm741.dx 
+          IS  463.220000E-15  800.000000E-18  800.000000E-18  800.000000E-18 
+           N    5                                                            
+          RS   10.833           1               1.000000E-03    1            
+         CJO                                   10.000000E-12                 
+
+
+               X_U7.x_lm741.dy X_U8.x_lm741.dx X_U8.x_lm741.dy X_U9.x_lm741.dx 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1.000000E-03    1               1.000000E-03    1            
+         CJO   10.000000E-12                   10.000000E-12                 
+
+
+               X_U9.x_lm741.dy X_U10.x_lm741.dx 
+          IS  800.000000E-18  800.000000E-18 
+          RS    1.000000E-03    1            
+         CJO   10.000000E-12                 
+
+
+               X_U10.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+               X_U11.x_lm741.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+               X_U11.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+               X_U12.x_lm741.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+               X_U12.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+               X_U13.x_lm741.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+               X_U13.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+**** 05/15/22 00:04:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\schematic1\sim1.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U4.x_lm741.qx X_U7.x_lm741.qx X_U8.x_lm741.qx X_U9.x_lm741.qx 
+               NPN             NPN             NPN             NPN             
+       LEVEL    1               1               1               1            
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75           93.75           93.75         
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RE    0               0               0               0            
+          RC    0               0               0               0            
+         CJE    0               0               0               0            
+         VJE     .75             .75             .75             .75         
+         CJC    0               0               0               0            
+         VJC     .75             .75             .75             .75         
+         MJC     .33             .33             .33             .33         
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.42            2.42            2.42         
+           D     .87             .87             .87             .87         
+
+
+               X_U10.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U11.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U12.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U13.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+
+          JOB CONCLUDED
+
+**** 05/15/22 00:04:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\schematic1\sim1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        1.86
+  Total job time (using Solver 1)   =         .16
+

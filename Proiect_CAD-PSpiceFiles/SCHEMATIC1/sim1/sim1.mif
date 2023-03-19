@@ -1,0 +1,7 @@
+ lib=c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\verde.lib, offset=1220, size=56
+ lib=c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\rosu.lib, offset=1139, size=59
+ lib=c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\portocaliu.lib, offset=1155, size=62
+ lib=c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\galben.lib, offset=1181, size=58
+ lib=c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\albastru.lib, offset=1202, size=55
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\opamp.lib, offset=58704, size=430
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\opamp.lib, offset=101320, size=1093

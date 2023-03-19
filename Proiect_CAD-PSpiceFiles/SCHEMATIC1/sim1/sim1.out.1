@@ -1,0 +1,58 @@
+
+**** 05/14/22 17:30:57 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ c:\cadence\lascuanamaria_orcad\proiect_cad-pspicefiles\schematic1\sim1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Ana\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "C:\Cadence\LascuAnamaria_orCAD\proiect1-PSpiceFiles\blue.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 12 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PROIECT_CAD
+.EXTERNAL OUTPUT out
+.EXTERNAL OUTPUT out1
+.EXTERNAL OUTPUT ref
+R_R1         N00083 +VCC  100k TC=0,0 
+R_R2         0 N00083  {senzor} TC=0,0 
+R_R3         0 N00083  100k TC=0,0 
+V_V1         +VCC 0 +12V
+V_V2         -VCC 0 -12V
+R_R24         OUT N11463  1k TC=0,0 
+R_R23         N11579 N11289  1k TC=0,0 
+X_U4         N11463 N11289 +VCC -VCC OUT1 LM741
+R_R5         N11289 OUT1  11.5k TC=0,0 
+R_R26         0 N11463  11.5k TC=0,0 
+R_R27         N11846 +VCC  5.6k TC=0,0 
+R_R28         0 N11846  1k TC=0,0 
+X_U7         N00083 OUT +VCC -VCC OUT LM741
+X_U8         N11846 REF +VCC -VCC REF LM741
+.PARAM  senzor=25k
+
+**** RESUMING sim1.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N11579.
+
